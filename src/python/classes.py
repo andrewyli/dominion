@@ -61,4 +61,38 @@ class Player():
     """
     Represents a generic player in the game.
     """
-    pass
+    def __init__(self, name, default_actions=1, default_buys=1):
+        self.name = name
+        # The Cards a Player has cycle through these lists:
+        self.deck = []
+        self.hand = []
+        self.discard = []
+        # Defaults of temporary attributes used during a Player's turn:
+        self.default_actions = default_actions
+        self.default_buys = 1
+        self.default_money = 0
+        # Temporary attributes used and modified during a Player's turn:
+        self.actions = self.default_actions
+        self.buys = self.default_buys
+        self.money = self.default_money
+
+    def take_turn(self, game):
+        """
+        The mechanism by which Player performs actions in the action, buy,
+        and clean-up phases.
+        """
+        # Action Phase:
+        done = False
+        while self.actions > 0 and not done:
+            # This needs to ask what Card Player wants to use if any.
+            pass
+        # Buy Phase:
+        done = False
+        while self.buys > 0 and not done:
+            # This needs to ask what Player wants to buy if anything.
+            pass
+        # Clean-up Phase
+        for card in self.hand:
+            self.discard.append(self.hand.pop())
+
+        """NOT FINISHED YET"""
