@@ -15,18 +15,50 @@ class ActionCard(Card):
     An action card.
     """
 
-    is_action = True
 
-    def __init__(self, name):
-        Card.__init__(self, name)
+class TreasureCard(Card):
+    """
+    The currency of the game.
+    """
 
 
-class
+class VictoryCard(Card):
+    """
+    Determines a player's points at the end of the game.
+    """
 
+
+class AttackCard(Card):
+    """
+    A card that can target another player (generally negatively).
+    """
+
+
+class ReactionCard(Card):
+    """
+    A type of card that can respond to an opponent's action on their turn.
+    """
+
+
+class Game():
+    """
+    A game instance that contains the player, the discard/supply piles.
+    """
+    def __init__(self, players, supply_piles, turn=0):
+        self.players = players
+        self.supply_piles = supply_piles
+        self.turn = turn
+
+    def tick():
+        """
+        Takes a turn for the next player and increments turn counter.
+        """
+        self.players[self.turn % len(self.players)].take_turn(self)
+        self.turn += 1
 
 
 class Player():
     """
-    Represents a generic player in the game
+    Represents a generic player in the game.
     """
     pass
